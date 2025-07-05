@@ -1,0 +1,347 @@
+body {
+  background: #e9ebee;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.fb-header {
+  background: #1877f2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.fb-logo {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-right: 2em;
+}
+
+
+.sm-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 2em 1em 1em 1em;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.03);
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #1877f2;
+  letter-spacing: 1px;
+}
+#user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#user-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.7em 1em;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#user-list li.selected, #user-list li:hover {
+  background: #e7f3ff;
+  color: #1877f2;
+}
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #cfd8dc;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.feed {
+  flex: 1;
+  padding: 2em 2em 2em 2em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+#user-info {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.5em;
+  margin-bottom: 2em;
+  display: block;
+}
+#user-info h3 {
+  margin-top: 0;
+}
+.create-post-box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1em 1.5em 1.5em 1.5em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+#create-post-btn {
+  align-self: flex-end;
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#create-post-btn:hover {
+  background: #145db2;
+}
+#create-post-text {
+  border-radius: 20px;
+  border: 1px solid #ccd0d5;
+  padding: 12px 18px;
+  font-size: 1em;
+  resize: none;
+  min-height: 48px;
+  background: #f0f2f5;
+}
+#posts-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.post {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.5em;
+  margin-bottom: 0.5em;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.post-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5em;
+}
+.edit-post-btn, .delete-post-btn {
+  background: #f0f2f5;
+  border: none;
+  border-radius: 4px;
+  color: #1877f2;
+  font-size: 0.95em;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.edit-post-btn:hover {
+  background: #e7f3ff;
+}
+.delete-post-btn {
+  color: #e53935;
+}
+.delete-post-btn:hover {
+  background: #ffeaea;
+}
+.post-user-info {
+  display: flex;
+  flex-direction: column;
+}
+.post-user-name {
+  font-weight: bold;
+  color: #1877f2;
+  font-size: 1.05em;
+}
+.post-user-username {
+  color: #888;
+  font-size: 0.95em;
+}
+.toggle-comments-btn {
+  background: none;
+  border: none;
+  color: #1877f2;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  padding: 0;
+  transition: color 0.2s;
+}
+.toggle-comments-btn:hover {
+  color: #145db2;
+  text-decoration: underline;
+}
+.comments {
+  margin-top: 0.5em;
+  background: #f0f2f5;
+  border-radius: 6px;
+  padding: 1em;
+  transition: max-height 0.3s, opacity 0.3s;
+  max-height: 1000px;
+  opacity: 1;
+  overflow: hidden;
+}
+.comments-collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  padding: 0 1em !important;
+}
+.comment {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.5em 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7em;
+}
+.comment:last-child {
+  border-bottom: none;
+}
+.comment-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #cfd8dc;
+  object-fit: cover;
+}
+.comment-author {
+  font-weight: bold;
+  color: #1877f2;
+  font-size: 0.98em;
+}
+.comment-body {
+  color: #333;
+  font-size: 0.98em;
+}
+
+/* Modal styles (unchanged) */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  align-items: center;
+  justify-content: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  min-width: 320px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+form label {
+  display: block;
+  margin: 0.5em 0 0.2em 0;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+form button[type="submit"] {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+form button[type="submit"]:hover {
+  background: #145db2;
+}
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 1.1em;
+  cursor: pointer;
+  z-index: 1001;
+}
+@media (max-width: 900px) {
+  .sidebar-toggle {
+    display: block;
+  }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    width: 220px;
+    height: calc(100vh - 56px);
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 1000;
+    border-bottom: none;
+    border-right: 1px solid #e0e0e0;
+    padding: 1em 0.5em 0.5em 0.5em;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sm-container {
+    flex-direction: column;
+  }
+  .feed {
+    max-width: 100vw;
+    padding: 1em 0.5em 2em 0.5em;
+  }
+}
+@media (max-width: 600px) {
+  .sidebar {
+    top: 48px;
+    width: 80vw;
+    min-width: 180px;
+    max-width: 320px;
+    height: calc(100vh - 48px);
+    padding: 0.5em 0.2em 0.2em 0.2em;
+  }
+  .fb-header {
+    height: 48px;
+  }
+}

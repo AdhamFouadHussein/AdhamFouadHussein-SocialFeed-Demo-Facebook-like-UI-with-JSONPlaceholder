@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook Replica Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="fb-header">
+  
+  </header>
+  <div class="sm-container">
+    <aside class="sidebar">
+      <h2>Friends</h2>
+      <ul id="user-list"></ul>
+    </aside>
+    <main class="feed">
+      <div id="user-info"></div>
+      <div class="create-post-box">
+        <textarea id="new-post-text" placeholder="What's on your mind?"></textarea>
+        <button id="create-post-btn">Post</button>
+      </div>
+      <div id="posts-feed"></div>
+    </main>
+  </div>
+  <div id="form-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <form id="item-form"></form>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
